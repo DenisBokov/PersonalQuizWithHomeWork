@@ -47,13 +47,13 @@ class ResultViewController: UIViewController {
         
         let sortedValueForAnimals = listAnimals.sorted { $0.value > $1.value }
         
-        let maxТumberRepetitions = sortedValueForAnimals.max { a, b in
+        let maxNumberRepetitions = sortedValueForAnimals.max { a, b in
             a.value < b.value
         }
         
         guard let defaultResult = sortedValueForAnimals.first?.key else { return }
         
-        if let animal = maxТumberRepetitions {
+        if let animal = maxNumberRepetitions {
             displayResult(for: animal.key)
         } else {
             displayResult(for: defaultResult)
